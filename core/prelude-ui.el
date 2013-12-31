@@ -51,6 +51,7 @@
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
+(scroll-bar-mode -1)
 
 ;; mode line settings
 (line-number-mode t)
@@ -73,7 +74,7 @@
                                           "%b"))))
 
 ;; use zenburn as the default theme
-(load-theme 'zenburn t)
+(load-theme 'molokai t)
 
 (provide 'prelude-ui)
 ;;; prelude-ui.el ends here
