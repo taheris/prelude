@@ -17,6 +17,9 @@
 (add-hook 'comint-mode-hook 'turn-on-evil-mode)
 (add-hook 'Info-mode-hook 'turn-off-evil-mode)
 
+;; set initial states
+(evil-set-initial-state 'git-commit-mode 'insert)
+
 ;; remap keys
 (defun evil-move-key (keymap-from keymap-to key)
   "Moves key binding from one keymap to another, deleting from the old location."
