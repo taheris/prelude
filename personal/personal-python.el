@@ -8,5 +8,5 @@
       (list "epylint" (list local-file)))))
 
 (add-to-list 'flymake-allowed-file-name-masks
-             '("\\.py\\'" flymake-pylint-init)))
+             '("\\.py\\'" flymake-pylint-init))
 
