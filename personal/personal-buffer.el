@@ -15,3 +15,6 @@
 (global-set-key (kbd "s-j") 'evil-window-down)
 (global-set-key (kbd "s-k") 'evil-window-up)
 (global-set-key (kbd "s-l") 'evil-window-right)
+
+;; use smex mode
+(global-set-key (kbd "M-x") 'smex)
