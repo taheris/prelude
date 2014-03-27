@@ -22,3 +22,5 @@
 ;; tab size
 (setq tab-width 4)
 
+;; always use smex mode
+(global-set-key (kbd "M-x") 'smex)
