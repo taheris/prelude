@@ -39,7 +39,10 @@
 (message "Prelude is powering up... Be patient, Master %s!" current-user)
 
 (when (version< emacs-version "24.1")
-  (error "Prelude requires at least GNU Emacs 24.1"))
+  (error "Prelude requires at least GNU Emacs 24.1, but you're running %s" emacs-version))
+
+;; Always load newest byte code
+(setq load-prefer-newer t)
 
 (defvar prelude-dir (file-name-directory load-file-name)
   "The root dir of the Emacs Prelude distribution.")
@@ -70,8 +73,7 @@ by Prelude.")
  (dolist (f (directory-files parent-dir))
    (let ((name (expand-file-name f parent-dir)))
      (when (and (file-directory-p name)
-                (not (equal f ".."))
-                (not (equal f ".")))
+                (not (string-prefix-p "." f)))
        (add-to-list 'load-path name)
        (prelude-add-subfolders-to-load-path name)))))
 
