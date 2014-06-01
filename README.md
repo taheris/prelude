@@ -54,7 +54,6 @@ advised to always run Prelude with the latest Emacs - currently
 	- [Customized C-a behavior](#customized-c-a-behavior)
 	- [Poor ido matching performance on large datasets](#poor-ido-matching-performance-on-large-datasets)
 	- [Windows compatibility](#windows-compatibility)
-- [Share the knowledge](#share-the-knowledge)
 - [Known issues](#known-issues)
 - [Support](#support)
 - [Contributors](#contributors)
@@ -263,6 +262,7 @@ Keybinding         | Description
 <kbd>C-x M-m</kbd> | Start your default shell.
 <kbd>C-x C-m</kbd> | Alias for `M-x`.
 <kbd>C-h A</kbd>   | Run `apropos` (search in all Emacs symbols).
+<kbd>C-h C-m</kbd> | Display key bindings of current major mode and descriptions of every binding.
 <kbd>M-/</kbd>     | Run `hippie-expand` (a replacement for the default `dabbrev-expand`).
 <kbd>C-x C-b</kbd> | Open `ibuffer` (a replacement for the default `buffer-list`).
 <kbd>F11</kbd>     | Make the window full screen.
@@ -301,7 +301,6 @@ Keybinding         | Description
 <kbd>C-c h</kbd> | Open Helm (available if you've enabled the `prelude-helm` module).
 <kbd>C-c I</kbd> | Open user's init file.
 <kbd>C-c S</kbd> | Open shell's init file.
-<kbd>C-h C-m</kbd> | Display key bindings of current major mode and descriptions of every binding.
 <kbd>C-c . +</kbd> | Increment integer at point. Default is +1.
 <kbd>C-c . -</kbd> | Decrement integer at point. Default is -1.
 <kbd>C-c . *</kbd> | Multiply integer at point. Default is *2.
@@ -613,13 +612,6 @@ While everything in Prelude should work fine in Windows, I test it only
 with Linux & OSX, so there are Windows related problems from time to
 time. This situation will probably improve over time.
 
-## Share the knowledge
-
-[EmacsWiki](http://emacswiki.org) collects useful resources for working
-with GNU Emacs. Please, take the time to peruse and improve them as
-you accumulate knowledge about Emacs. Prelude makes this especially
-easy, since it bundles
-
 ## Known issues
 
 Check out the project's
@@ -642,6 +634,10 @@ development of Emacs Prelude.
 
 Bug reports and suggestions for improvements are always
 welcome. GitHub pull requests are even better! :-)
+
+I'm also accepting financial contributions via [gittip](https://www.gittip.com/bbatsov).
+
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/bbatsov)
 
 Cheers,<br/>
 [Bozhidar](https://twitter.com/bbatsov)
