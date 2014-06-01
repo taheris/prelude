@@ -1,6 +1,11 @@
 (if (member "Monaco" (font-family-list))
   (cond ((eq system-type 'darwin)
          (set-face-attribute 'default nil :font "Monaco 14"))
+		((eq system-type 'windows-nt)
+         (set-face-attribute 'default nil :font "Monaco for Powerline 14"))
         ((string-equal (getenv "DESKTOP_SESSION") "gnome")
          (set-face-attribute 'default nil :font "Monaco 14"))
         (t (set-face-attribute 'default nil :font "Monaco 12"))))
+
+(if (member "Monaco for Powerline" (font-family-list))
+	(set-face-attribute 'default nil :font "Monaco for Powerline 14"))
