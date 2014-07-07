@@ -150,7 +150,7 @@ result."
         (message nil))
 
       (let ((w (display-buffer (current-buffer))))
-        (balance-windows)
+        ;(balance-windows)
         (shrink-window-if-larger-than-buffer w)
         (set-window-point w (point-min))))))
 
