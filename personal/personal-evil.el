@@ -38,5 +38,8 @@
 (define-key evil-normal-state-map (kbd "C-+") 'evil-window-increase-height)
 (define-key evil-normal-state-map (kbd "C--") 'evil-window-decrease-height)
 
+;; return always indents
+(evil-global-set-key 'insert (kbd "<RET>") 'evil-ret-and-indent)
+
 
 (provide 'personal-evil)
