@@ -11,6 +11,10 @@
 (evil-mode 1)
 (setq evil-shift-width 2)
 
+;; use emacs keybindings in insert mode
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
 ;; use on text-mode and prog-mode
 (add-hook 'text-mode-hook 'turn-on-evil-mode)
 (add-hook 'prog-mode-hook 'turn-on-evil-mode)
