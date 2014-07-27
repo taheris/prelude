@@ -7,7 +7,7 @@
 (setq evil-want-C-i-jump t)
 (setq evil-want-C-u-scroll t)
 ;; previous line stopped working so manual override
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up')
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 (require 'evil)
 (evil-mode 1)
@@ -37,7 +37,7 @@
 
 (define-key evil-normal-state-map "\C-r" 'isearch-backward)
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
-(define-key evil-motion-state-map "\C-e" 'evil-end-of-line)')
+(define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 
 (define-key minibuffer-local-map "\C-p" nil)
 (define-key minibuffer-local-map "\C-n" nil)
