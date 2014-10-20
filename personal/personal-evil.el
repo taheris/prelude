@@ -6,8 +6,6 @@
 (setq evil-regexp-search t)
 (setq evil-want-C-i-jump t)
 (setq evil-want-C-u-scroll t)
-;; previous line stopped working so manual override
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 (require 'evil)
 (evil-mode 1)
