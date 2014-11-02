@@ -5,7 +5,6 @@
 (setq evil-auto-indent t)
 (setq evil-regexp-search t)
 (setq evil-want-C-i-jump t)
-(setq evil-want-C-u-scroll t)
 
 (require 'evil)
 (evil-mode 1)
@@ -33,6 +32,7 @@
 (evil-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (evil-move-key evil-motion-state-map evil-normal-state-map " ")
 
+(define-key evil-normal-state-map "\C-b" 'evil-scroll-up)
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 
