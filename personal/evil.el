@@ -18,9 +18,6 @@
 (add-hook 'comint-mode-hook 'turn-on-evil-mode)
 (add-hook 'Info-mode-hook 'turn-off-evil-mode)
 
-;; set initial states
-(evil-set-initial-state 'git-commit-mode 'insert)
-
 ;; remap keys
 (defun evil-move-key (keymap-from keymap-to key)
   "Moves key binding from one keymap to another, deleting from the old location."
@@ -37,6 +34,17 @@
 (define-key minibuffer-local-map "\C-p" nil)
 (define-key minibuffer-local-map "\C-n" nil)
 
+;; evil leader
+(evil-leader/set-leader ",")
+(evil-leader/set-key "w" 'save-buffer)
+(evil-leader/set-key "q" 'kill-buffer)
+(evil-leader/set-key "h" 'dired-jump)
+(evil-leader/set-key "v" 'split-window-right)
+(evil-leader/set-key "e" 'pp-eval-last-sexp)
+(evil-leader/set-key "," 'other-window)
+(evil-leader/set-key "b" 'helm-buffers-list)
+(evil-leader/set-key "x" 'helm-M-x)
+
 ;; easier window resizing
 (define-key evil-normal-state-map "+" 'evil-window-increase-width)
 (define-key evil-normal-state-map "-" 'evil-window-decrease-width)
@@ -46,7 +54,26 @@
 ;; return always indents
 (evil-global-set-key 'insert (kbd "<RET>") 'evil-ret-and-indent)
 
+;; magit keybindings
+(evil-set-initial-state 'git-commit-mode 'insert)
+(evil-set-initial-state 'magit-mode 'normal)
+(evil-set-initial-state 'magit-status-mode 'normal)
+(evil-set-initial-state 'magit-diff-mode 'normal)
+(evil-set-initial-state 'magit-log-mode 'normal)
+
+(evil-define-key 'normal magit-mode-map
+  "j" 'magit-goto-next-section
+  "k" 'magit-goto-previous-section)
+(evil-define-key 'normal magit-log-mode-map
+  "j" 'magit-goto-next-section
+  "k" 'magit-goto-previous-section)
+(evil-define-key 'normal magit-diff-mode-map
+  "j" 'magit-goto-next-section
+  "k" 'magit-goto-previous-section)
+
 ;; dired keybindings
+(require 'dired-x)
+
 (defun my-dired-up-directory ()
   "Take dired up one directory, but behave like dired-find-alternate-file"
   (interactive)
