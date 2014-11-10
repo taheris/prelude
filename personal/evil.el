@@ -1,10 +1,8 @@
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
-
 (setq evil-default-cursor t)
 (setq evil-auto-indent t)
 (setq evil-regexp-search t)
 (setq evil-want-C-i-jump t)
+(setq evil-want-C-u-scroll t)
 
 (require 'evil)
 (evil-mode 1)
@@ -32,7 +30,7 @@
 (evil-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (evil-move-key evil-motion-state-map evil-normal-state-map " ")
 
-(define-key evil-normal-state-map "\C-b" 'evil-scroll-up)
+(define-key evil-normal-state-map "\C-b" 'universal-argument)
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 
@@ -48,5 +46,16 @@
 ;; return always indents
 (evil-global-set-key 'insert (kbd "<RET>") 'evil-ret-and-indent)
 
+;; dired keybindings
+(evil-define-key 'normal dired-mode-map "h" 'dired-up-directory)
+(evil-define-key 'normal dired-mode-map "l" 'dired-find-alternate-file)
+(evil-define-key 'normal dired-mode-map "o" 'dired-sort-toggle-or-edit)
+(evil-define-key 'normal dired-mode-map "v" 'dired-toggle-marks)
+(evil-define-key 'normal dired-mode-map "m" 'dired-mark)
+(evil-define-key 'normal dired-mode-map "u" 'dired-unmark)
+(evil-define-key 'normal dired-mode-map "U" 'dired-unmark-all-marks)
+(evil-define-key 'normal dired-mode-map "c" 'dired-create-directory)
+(evil-define-key 'normal dired-mode-map "n" 'evil-search-next)
+(evil-define-key 'normal dired-mode-map "N" 'evil-search-previous)
+(evil-define-key 'normal dired-mode-map "q" 'kill-this-buffer)
 
-(provide 'personal-evil)
