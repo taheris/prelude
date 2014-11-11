@@ -35,7 +35,9 @@
 (define-key minibuffer-local-map "\C-n" nil)
 
 ;; evil leader
+(global-evil-leader-mode)
 (evil-leader/set-leader ",")
+
 (evil-leader/set-key "w" 'save-buffer)
 (evil-leader/set-key "q" 'kill-buffer)
 (evil-leader/set-key "h" 'dired-jump)
