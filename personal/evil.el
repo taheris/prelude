@@ -37,7 +37,6 @@
 ;; evil leader
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
-
 (evil-leader/set-key "w" 'save-buffer)
 (evil-leader/set-key "q" 'kill-buffer)
 (evil-leader/set-key "h" 'dired-jump)
@@ -46,6 +45,7 @@
 (evil-leader/set-key "," 'other-window)
 (evil-leader/set-key "b" 'helm-buffers-list)
 (evil-leader/set-key "x" 'helm-M-x)
+(evil-leader/set-key "." 'ace-jump-mode)
 
 ;; easier window resizing
 (define-key evil-normal-state-map "+" 'evil-window-increase-width)
