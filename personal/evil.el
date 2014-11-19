@@ -39,7 +39,7 @@
 (evil-leader/set-leader ",")
 (evil-leader/set-key "w" 'save-buffer)
 (evil-leader/set-key "q" 'kill-buffer)
-(evil-leader/set-key "h" 'dired-jump)
+(evil-leader/set-key "d" 'dired-jump)
 (evil-leader/set-key "v" 'split-window-right)
 (evil-leader/set-key "e" 'pp-eval-last-sexp)
 (evil-leader/set-key "," 'other-window)
