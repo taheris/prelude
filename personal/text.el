@@ -1,5 +1,7 @@
-(defun my-visual-line-enable ()
-  (visual-line-mode t))
+(defun my-text-mode ()
+  (progn
+    (flyspell-mode t)
+    (visual-line-mode t)))
 
-(add-hook 'markdown-mode-hook 'my-visual-line-enable)
+(add-hook 'markdown-mode-hook 'my-text-mode)
 
