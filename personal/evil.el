@@ -1,9 +1,3 @@
-(setq evil-default-cursor t)
-(setq evil-auto-indent t)
-(setq evil-regexp-search t)
-(setq evil-want-C-i-jump t)
-(setq evil-want-C-u-scroll t)
-
 (require 'evil)
 (evil-mode 1)
 (setq evil-shift-width 2)
@@ -29,6 +23,11 @@
 
 (define-key evil-normal-state-map "\C-b" 'universal-argument)
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-normal-state-map "\M-k" 'evil-window-up)
+(define-key evil-normal-state-map "\M-j" 'evil-window-down)
+(define-key evil-normal-state-map "\M-h" 'evil-window-left)
+(define-key evil-normal-state-map "\M-l" 'evil-window-right)
+
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 
 (define-key minibuffer-local-map "\C-p" nil)
@@ -94,5 +93,6 @@
   "c" 'dired-create-directory
   "n" 'evil-search-next
   "N" 'evil-search-previous
-  "q" 'kill-this-buffer)
+  "q" 'kill-this-buffer
+  )
 
